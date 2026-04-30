@@ -1,7 +1,7 @@
 window.QUIZ_SET = {
   id: "ap-stats-u6",
   title: "AP Stats Unit 6 Review",
-  description: "Questions on inference, confidence intervals, and sampling",
+  description: "Questions on inference, confidence intervals, and sampling distributions",
   questions: [
     {
       question: "What is the purpose of a confidence interval?",
@@ -14,94 +14,94 @@ window.QUIZ_SET = {
       correct: 0
     },
     {
-      question: "Which condition is NOT required for constructing a confidence interval for a proportion?",
+      question: "Which condition must be met for a one-sample t-interval?",
       options: [
-        "Random sample",
-        "Normal population",
-        "np ≥ 10 and n(1-p) ≥ 10",
-        "Independent observations"
+        "The sample must be random and n ≥ 30 or population is approximately normal",
+        "The population must be exactly normal",
+        "The sample size must be at least 100",
+        "The data must be categorical"
       ],
-      correct: 1
+      correct: 0
     },
     {
       question: "What happens to the margin of error when the confidence level increases?",
       options: [
-        "It decreases",
         "It increases",
+        "It decreases",
         "It stays the same",
         "It becomes zero"
       ],
-      correct: 1
+      correct: 0
     },
     {
-      question: "What does a 95% confidence interval mean?",
+      question: "For a 95% confidence interval, what is the critical z-value?",
       options: [
-        "95% of the data falls within the interval",
-        "There is a 95% chance the parameter is in the interval",
-        "95% of all possible samples will produce intervals containing the true parameter",
-        "The interval is 95% accurate"
-      ],
-      correct: 2
-    },
-    {
-      question: "Which sample size would give the smallest margin of error?",
-      options: [
-        "n = 25",
-        "n = 50",
-        "n = 100",
-        "n = 200"
-      ],
-      correct: 3
-    },
-    {
-      question: "What is the critical value z* for a 90% confidence interval?",
-      options: [
-        "1.645",
         "1.96",
-        "2.33",
-        "2.58"
+        "1.645",
+        "2.576",
+        "1.28"
+      ],
+      correct: 0
+    },
+    {
+      question: "What does the standard error measure?",
+      options: [
+        "The variability of a statistic across different samples",
+        "The accuracy of a single measurement",
+        "The size of the population",
+        "The confidence level"
       ],
       correct: 0
     },
     {
       question: "When should you use a t-distribution instead of a z-distribution?",
       options: [
-        "When the sample size is large",
         "When the population standard deviation is unknown",
-        "When the data is categorical",
-        "When the confidence level is 95%"
+        "When the sample size is large",
+        "When the confidence level is 95%",
+        "When the data is categorical"
       ],
-      correct: 1
+      correct: 0
     },
     {
-      question: "What affects the width of a confidence interval?",
+      question: "What is the formula for the margin of error in a confidence interval?",
       options: [
-        "Sample size only",
-        "Confidence level only",
-        "Both sample size and confidence level",
-        "Neither affects the width"
+        "critical value × standard error",
+        "sample mean / sample size",
+        "population mean - sample mean",
+        "standard deviation / √n"
       ],
-      correct: 2
+      correct: 0
     },
     {
-      question: "What is the point estimate in a confidence interval?",
+      question: "If a 95% CI for a mean is (45, 55), what is the sample mean?",
       options: [
-        "The margin of error",
-        "The center of the interval",
-        "The critical value",
-        "The standard deviation"
+        "50",
+        "45",
+        "55",
+        "10"
       ],
-      correct: 1
+      correct: 0
     },
     {
-      question: "If a confidence interval contains the null value, what can we conclude?",
+      question: "What is the effect of increasing sample size on the confidence interval?",
       options: [
-        "We reject the null hypothesis",
-        "We fail to reject the null hypothesis",
-        "The null hypothesis is true",
-        "The null hypothesis is false"
+        "Makes it narrower",
+        "Makes it wider",
+        "No effect",
+        "Makes it zero width"
       ],
-      correct: 1
+      correct: 0
+    },
+    {
+      question: "Which of the following is NOT a condition for inference?",
+      options: [
+        "The sample must be exactly 30 observations",
+        "Random sampling",
+        "Independence",
+        "Normal/Large Sample condition"
+      ],
+      correct: 0
     }
   ]
 };
