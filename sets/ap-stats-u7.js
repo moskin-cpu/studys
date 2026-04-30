@@ -1,0 +1,217 @@
+window.QUIZ_SET = {
+  id: "ap-stats-u7",
+  title: "AP Stats Unit 7 Review",
+  description: "10 questions on inference for quantitative data: means",
+  questions: [
+    {
+      id: "u7-1",
+      src: "Inference for Quantitative Data: Means",
+      diff: 2,
+      q: "A researcher wants to test a hypothesis that a population mean is greater than 50. He gathers a sample of 35 measurements and finds the sample mean was 54.5 and the standard deviation was 10.2. What is the value of the test statistic for a one-sample t test for a population mean?",
+      ch: {
+        A: "−0.44",
+        B: "0.44",
+        C: "−2.61",
+        D: "2.61",
+        E: "None of the above"
+      },
+      ans: "D",
+      ex: {
+        A: "Incorrect. A negative t-statistic means the sample mean is below the null value. Since 54.5 > 50, t must be positive.",
+        B: "Incorrect. 0.44 = (54.5 − 50)/10.2 — this forgets to divide by √35, omitting the standard error denominator.",
+        C: "Incorrect. The sign is wrong. Since 54.5 > 50, the numerator is positive, giving a positive t.",
+        D: "Correct. t = (x̄ − μ₀)/(s/√n) = (54.5 − 50)/(10.2/√35) = 4.5/1.724 ≈ 2.61.",
+        E: "Incorrect. The calculation does yield exactly 2.61, which is listed as choice D."
+      }
+    },
+    {
+      id: "u7-2",
+      src: "Inference for Quantitative Data: Means",
+      diff: 2,
+      q: "A nutrition researcher is hoping to evaluate the claimed sugar content on a new McDonald's sandwich. McDonald's claims that the sandwich has 20g of sugar and a sample of 5 sandwiches shows sugar contents of 15, 22, 18, 17, and 23. What assumption(s) do we have to make in order to carry out a legitimate statistical test of the claim?\nI. The 5 sandwiches are from an approximately normally distributed population.\nII. The 5 sandwiches can be viewed as coming from a simple random sample.\nIII. The standard deviation of the population of all McDonald sandwich sugar content is known.",
+      ch: {
+        A: "I only",
+        B: "II only",
+        C: "III only",
+        D: "I and II",
+        E: "I, II, and III"
+      },
+      ans: "D",
+      ex: {
+        A: "Incorrect. Normality is necessary with n = 5 since the CLT doesn't apply, but it's not sufficient by itself — we also need the sample to be random.",
+        B: "Incorrect. An SRS is required, but with only 5 sandwiches the Central Limit Theorem doesn't kick in, so the normality assumption is also needed.",
+        C: "Incorrect. If σ were known, we'd use a z-test instead. A t-test is used precisely because σ is UNKNOWN.",
+        D: "Correct. With n = 5, we need (I) approximate normality of the population (CLT doesn't apply) and (II) an SRS. Knowing σ (III) is not required — we estimate it with s.",
+        E: "Incorrect. Statement III is not a t-test assumption. If σ were known, it would call for a z-test, not a t-test."
+      }
+    },
+    {
+      id: "u7-3",
+      src: "Inference for Quantitative Data: Means",
+      diff: 2,
+      q: "A pharmaceutical company claims that their new pain relief medication is more effective in reducing pain compared to their current medication. The current medication has a mean pain reduction score of 50 on a standardized pain scale. If μ represents the true mean pain reduction score for the new medication, which null and alternative hypotheses should be tested?",
+      ch: {
+        A: "H₀: μ < 50; Hₐ: μ ≥ 50",
+        B: "H₀: μ ≤ 50; Hₐ: μ > 50",
+        C: "H₀: μ = 50; Hₐ: μ < 50",
+        D: "H₀: μ = 50; Hₐ: μ > 50",
+        E: "H₀: μ = 50; Hₐ: μ ≠ 50"
+      },
+      ans: "D",
+      ex: {
+        A: "Incorrect. H₀ must use equality (=), not a strict inequality (<).",
+        B: "Incorrect. H₀ must use = rather than ≤. This is not standard hypothesis testing form.",
+        C: "Incorrect. Hₐ: μ < 50 would test whether the new drug is worse than current, opposite of the claim.",
+        D: "Correct. H₀: μ = 50 states the baseline (new drug performs the same as current). Hₐ: μ > 50 tests whether the new drug is more effective at reducing pain.",
+        E: "Incorrect. A two-sided test (μ ≠ 50) does not reflect the directional nature of the comparison described."
+      }
+    },
+    {
+      id: "u7-4",
+      src: "Inference for Quantitative Data: Means",
+      diff: 3,
+      q: "A large-sample hypothesis test with a null hypothesis μ = 15 against the alternative hypothesis μ ≠ 15 results in the test statistic value t = 1.37. If the sample size is 8, which of the following is the corresponding p-value?",
+      ch: {
+        A: "0.1039",
+        B: "0.1065",
+        C: "0.2130",
+        D: "0.2079",
+        E: "0.1707"
+      },
+      ans: "C",
+      ex: {
+        A: "Incorrect. Corresponds to a different degrees of freedom or a one-tailed test.",
+        B: "Incorrect. 0.1065 ≈ P(T > 1.37 | df = 7) — this is the one-sided p-value. For a two-sided test, double it.",
+        C: "Correct. df = n − 1 = 7. Two-sided p-value = 2 × P(T > 1.37 | df = 7) ≈ 2 × 0.1065 = 0.2130.",
+        D: "Incorrect. 0.2079 uses df = 8 (n instead of n−1), an off-by-one error.",
+        E: "Incorrect. 0.1707 corresponds to a one-tailed result using different degrees of freedom."
+      }
+    },
+    {
+      id: "u7-5",
+      src: "Inference for Quantitative Data: Means",
+      diff: 2,
+      q: "An assembly line machine is producing microchips for graphic cards that are 200 micrometers long. Each day, an SRS of five microchips are pulled and measured. If their mean length is under 195 micrometers or over 205 micrometers, the machinery is stopped and an engineer is called to make adjustments before production is resumed. The quality control procedure may be viewed as a hypothesis test with H₀: μ = 200 and Hₐ: μ ≠ 200. What would be a consequence of a Type II error in this situation?",
+      ch: {
+        A: "A necessary stoppage in microchip production.",
+        B: "An unnecessary stoppage in microchip production.",
+        C: "Continued production of wrong sized microchips.",
+        D: "Continued production of proper sized microchips.",
+        E: "Continued production of microchips that randomly are the right or wrong size."
+      },
+      ans: "C",
+      ex: {
+        A: "Incorrect. A necessary stoppage means the machine is genuinely miscalibrated and we correctly detected it — this is the right decision, not an error.",
+        B: "Incorrect. An unnecessary stoppage = Type I error: the machine is fine but we stop it anyway (rejecting a true H₀).",
+        C: "Correct. Type II error = failing to reject a false H₀. The machine produces wrong-sized chips (μ ≠ 200), but the test fails to trigger the alarm. Production continues with defective chips.",
+        D: "Incorrect. Continued correct production is the right outcome when H₀ is truly true and we correctly fail to reject it.",
+        E: "Incorrect. This doesn't correspond to the formal definition of either error type."
+      }
+    },
+    {
+      id: "u7-6",
+      src: "Inference for Quantitative Data: Means",
+      diff: 3,
+      q: "An agronomist wanted to determine if a difference exists in the mean weight of watermelons grown in two separate fields. A random sample of 42 watermelons from Field X had mean 17 pounds and standard deviation 1.2 pounds. A random sample of 56 watermelons from Field Y had mean 18.1 pounds and standard deviation 3.2 pounds. Calculate the value of the t test statistic for the mean difference in Field X − Field Y watermelon production.",
+      ch: {
+        A: "−3.112",
+        B: "−2.361",
+        C: "−2.091",
+        D: "−1.355",
+        E: "−0.878"
+      },
+      ans: "B",
+      ex: {
+        A: "Incorrect. Results from using incorrect sample sizes or applying a pooled variance approach.",
+        B: "Correct. t = (17 − 18.1) / √(1.2²/42 + 3.2²/56) = −1.1 / √(0.03429 + 0.18286) = −1.1 / √0.21714 = −1.1 / 0.4660 ≈ −2.361.",
+        C: "Incorrect. Slight rounding or arithmetic error in the standard error calculation.",
+        D: "Incorrect. Error in computing SE — likely from not squaring the standard deviations.",
+        E: "Incorrect. Far too small in magnitude; likely from using SDs directly without dividing by sample sizes."
+      }
+    },
+    {
+      id: "u7-7",
+      src: "Inference for Quantitative Data: Means",
+      diff: 2,
+      q: "Researchers wanted to determine which soccer ball would be able to be kicked farther: one filled with helium or one filled with regular air. Each of 15 people kicked both soccer balls, and the order was randomized. The participants did not know which ball was filled with air and which was filled with helium. What type of study was conducted and which t-interval is appropriate for inference?",
+      ch: {
+        A: "A completely randomized design and a t-interval for a difference between means for independent samples.",
+        B: "A completely randomized design and a t-interval for a mean difference.",
+        C: "A matched-pairs design and a t-interval for a difference between means for independent samples.",
+        D: "A matched-pairs design and a t-interval for a mean difference.",
+        E: "An observational study and a t-interval for a difference between means for independent samples."
+      },
+      ans: "D",
+      ex: {
+        A: "Incorrect. This is not a completely randomized design. Each person kicks both balls, creating natural pairs. An independent samples t-interval would ignore the pairing.",
+        B: "Incorrect. The design is matched-pairs (each person kicks both balls), not a completely randomized design.",
+        C: "Incorrect. Correctly identifies the matched-pairs design but uses the wrong inference procedure — independent samples t-interval ignores the pairing and loses the benefit of the design.",
+        D: "Correct. Each person kicks both balls — matched-pairs design. The appropriate inference uses differences (helium minus air) for each person, analyzed with a t-interval for a mean difference.",
+        E: "Incorrect. Researchers manipulated which ball was kicked and randomized the order — this is a controlled experiment, not an observational study."
+      }
+    },
+    {
+      id: "u7-8",
+      src: "Inference for Quantitative Data: Means",
+      diff: 2,
+      q: "A two-sided t-test for a population mean has null hypothesis H₀: μ = 45. If a 90% t-interval constructed from the same sample data contains the value 45, which conclusion follows at significance level α = 0.10?",
+      ch: {
+        A: "The p-value is less than 0.10, and H₀ should be rejected.",
+        B: "The p-value is less than 0.10, and H₀ should not be rejected.",
+        C: "The p-value is greater than 0.10, and H₀ should be rejected.",
+        D: "The p-value is greater than 0.10, and H₀ should not be rejected.",
+        E: "There is not enough information to make a conclusion about the p-value and H₀."
+      },
+      ans: "D",
+      ex: {
+        A: "Incorrect. If 45 is inside the CI, the test would NOT reject H₀. The p-value would be greater than α.",
+        B: "Incorrect. Not rejecting H₀ is correct, but the p-value is greater than 0.10 when the null value is inside the CI.",
+        C: "Incorrect. If 45 is inside the 90% CI, we do NOT reject H₀ at α = 0.10.",
+        D: "Correct. There is a direct duality between CIs and two-sided hypothesis tests: a two-sided t-test at α = 0.10 rejects H₀ exactly when μ₀ falls OUTSIDE the 90% CI. Since 45 is inside the CI, we fail to reject H₀, meaning p-value > 0.10.",
+        E: "Incorrect. The CI-test duality gives us complete information here."
+      }
+    },
+    {
+      id: "u7-9",
+      src: "Inference for Quantitative Data: Means",
+      diff: 2,
+      q: "A consumer group is interested in the average times before a stove requires maintenance between two popular models. An SRS of 12 Model A stoves and an SRS of 15 Model B stoves is taken. The 95% confidence interval estimate of the mean difference is (3, 6). Which is the most reasonable conclusion?",
+      ch: {
+        A: "95% of all random samples of the same sizes will produce a difference in mean life expectancies between 3 and 6 years.",
+        B: "We are 95% confident that the difference in life expectancies is between 3 and 6 years.",
+        C: "The probability the life expectancies are different is 0.95.",
+        D: "The probability the difference in life expectancies is greater than 6 years is 0.95.",
+        E: "We are 95% confident that the difference in mean life expectancies is between 3 and 6 years."
+      },
+      ans: "E",
+      ex: {
+        A: "Incorrect. A CI gives confidence about capturing the true parameter, not a prediction that 95% of future samples will fall in this range.",
+        B: "Incorrect. This is close but slightly imprecise — it says 'life expectancies' (individual) rather than 'mean life expectancies' (the population parameter). The CI is for the difference in means.",
+        C: "Incorrect. The true means are either different or they aren't (a fixed fact). We cannot assign a probability to a fixed parameter.",
+        D: "Incorrect. This completely mischaracterizes the CI — the upper bound of the CI is 6, not a lower bound.",
+        E: "Correct. A 95% CI for the mean difference means we are 95% confident this interval captures the true difference in MEAN life expectancies. The word 'mean' is critical — this is an interval for the population parameter."
+      }
+    },
+    {
+      id: "u7-10",
+      src: "Inference for Quantitative Data: Means",
+      diff: 1,
+      q: "Looking online, you find the salaries of all 25 players for the Chicago Cubs as of opening day of the 2024 baseball season. The club total was $128 million. Which inference procedure would you use to estimate the average salary of the Cubs players?",
+      ch: {
+        A: "One-sample z interval for μ",
+        B: "One-sample t interval for μ",
+        C: "One-sample t test",
+        D: "One-sample z test",
+        E: "None of these. This is not a situation that calls for inference."
+      },
+      ans: "E",
+      ex: {
+        A: "Incorrect. A z-interval estimates a population mean from a sample. Here we have the entire population of all 25 players.",
+        B: "Incorrect. A t-interval estimates a population mean from a sample. We have complete census data, not a sample.",
+        C: "Incorrect. A t-test compares sample data to a hypothesized value. We already have all the data — no test is needed.",
+        D: "Incorrect. Same issue as C — inference procedures are for generalizing from a sample to a population. We have the full population.",
+        E: "Correct. We have ALL 25 players — this is a complete census. The average salary = $128M / 25 = $5.12M and can be calculated directly. Statistical inference is not needed when you already have the entire population."
+      }
+    }
+  ]
+};
