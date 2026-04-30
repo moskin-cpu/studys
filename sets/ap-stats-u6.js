@@ -1,234 +1,127 @@
 window.QUIZ_SET = {
   id: "ap-stats-u6",
   title: "AP Stats Unit 6 Review",
-  description: "38 questions on inference, CIs, and sampling",
+  description: "Inference for Proportions - Confidence Intervals and Significance Tests",
   questions: [
-    {id:"u6-1",src:"AP Stats Unit 6 Review",diff:1,
-    q:"USA Today reported that speed skater Bonnie Blair had "won the USA's heart," according to a USA Today/CNN/Gallup poll conducted on the final Thursday of the 1994 Winter Olympics. When asked who was the hero of the Olympics, 65 percent of the respondents chose Blair, who won five gold medals. The poll of 615 adults, done by telephone, had a margin of error of 4 percent. Which statement best describes what is meant by the 4 percent margin of error?",
-    ch:{A:"About 4 percent of adults were expected to change their minds between the time of the poll and its publication in USA Today.",B:"About 4 percent of adults did not have telephones.",C:"About 4 percent of the 615 adults polled refused to answer.",D:"Not all of the 615 adults knew anything about the Olympics.",E:"The difference between the sample percentage and the population percentage is likely to be less than 4 percent."},
-    ans:"E",
-    ex:{A:"Incorrect. Margin of error says nothing about people changing their minds over time. It is purely a measure of statistical precision tied to sampling variability.",B:"Incorrect. Adults without phones create undercoverage bias — a sampling design problem entirely separate from margin of error.",C:"Incorrect. Refusals cause nonresponse bias, which is a distinct problem from margin of error.",D:"Incorrect. Whether respondents knew about the Olympics is a validity concern, not what margin of error measures.",E:"Correct. Margin of error captures how far the sample statistic (65%) might deviate from the true population value. A 4% MOE means we are confident the true percentage is within 4 percentage points of 65%."}},
-
-    {id:"u6-2",src:"AP Stats Unit 6 Review",diff:2,
-    q:"An automobile manufacturer claims that the average gas mileage of a new model is 35 miles per gallon (mpg). A consumer group is skeptical of this claim and thinks the manufacturer may be overstating the average gas mileage. If μ represents the true average gas mileage for this new model, which null and alternative hypotheses should the consumer group test?",
-    ch:{A:"H₀: μ < 35 mpg; Hₐ: μ ≥ 35 mpg",B:"H₀: μ ≤ 35 mpg; Hₐ: μ > 35 mpg",C:"H₀: μ = 35 mpg; Hₐ: μ > 35 mpg",D:"H₀: μ = 35 mpg; Hₐ: μ < 35 mpg",E:"H₀: μ = 35 mpg; Hₐ: μ ≠ 35 mpg"},
-    ans:"D",
-    ex:{A:"Incorrect. H₀ must always be a statement of equality (=), never a strict inequality.",B:"Incorrect. H₀ must use = rather than ≤. Using ≤ is not standard hypothesis testing form.",C:"Incorrect. Hₐ: μ > 35 would test whether the car is actually better than claimed — the opposite of what the skeptical consumer group suspects.",D:"Correct. H₀ states the manufacturer's claim (μ = 35). The consumer group suspects the mpg is actually lower (overstatement), so Hₐ: μ < 35. This is a left-tailed test.",E:"Incorrect. A two-sided test (μ ≠ 35) is used when there's no directional suspicion. The consumer group specifically suspects the claim is overstated (too high)."}},
-
-    {id:"u6-3",src:"AP Stats Unit 6 Review",diff:3,
-    q:"A magazine has 1,620,000 subscribers, of whom 640,000 are women and 980,000 are men. Thirty percent of the women read the advertisements in the magazine and 50 percent of the men read the advertisements. A random sample of 100 subscribers is selected. What is the expected number of subscribers in the sample who read the advertisements?",
-    ch:{A:"30",B:"40",C:"42",D:"50",E:"80"},
-    ans:"C",
-    ex:{A:"Incorrect. 30 = 100 × 0.30 only applies if all 100 subscribers were women. This ignores the 60.5% of subscribers who are men.",B:"Incorrect. 40 comes from naively averaging 30% and 50% as equal groups. But women are only 640/1620 ≈ 39.5% of subscribers, so men carry more weight.",C:"Correct. P(woman) = 640,000/1,620,000 ≈ 0.3951. P(man) ≈ 0.6049. Expected readers = 100(0.3951)(0.30) + 100(0.6049)(0.50) = 11.85 + 30.25 ≈ 42.",D:"Incorrect. 50 would require approximately half of all subscribers reading ads — the weighted average is only 42.",E:"Incorrect. 80 would require 80% of all subscribers reading ads, far above either given rate (30% or 50%)."}},
-
-    {id:"u6-4",src:"AP Stats Unit 6 Review",diff:1,
-    q:"Which of the following is a criterion for choosing a t-test rather than a z-test when making an inference about the mean of a population?",
-    ch:{A:"The standard deviation of the population is unknown.",B:"The mean of the population is unknown.",C:"The sample may not have been a simple random sample.",D:"The population is not normally distributed.",E:"The sample size is less than 100."},
-    ans:"A",
-    ex:{A:"Correct. When the population standard deviation σ is unknown, we estimate it with the sample s, introducing extra uncertainty. The t-distribution accounts for this added variability; the z-test assumes σ is known.",B:"Incorrect. The population mean being unknown is the whole point of doing inference — it applies equally to both z and t tests.",C:"Incorrect. Whether the sample is an SRS is a condition required for both tests, not what distinguishes them.",D:"Incorrect. The t-test is robust to mild non-normality for larger samples. Non-normality alone does not determine which test to use.",E:"Incorrect. There is no hard rule that n < 100 requires a t-test. The deciding factor is whether σ is known."}},
-
-    {id:"u6-5",src:"AP Stats Unit 6 Review",diff:1,
-    q:"A researcher designs and executes an experiment to determine whether a certain medication will decrease blood pressure in patients with hypertension. The experiment was well designed with a null hypothesis that blood pressure is unaffected by the medication, and an alternative hypothesis that the medication causes a reduction in blood pressure. The statistical analysis yields a p-value of 0.33. Based on this p-value, which conclusion is most appropriate?",
-    ch:{A:"There is insufficient evidence to reject the null hypothesis.",B:"There is sufficient evidence to accept the null hypothesis.",C:"There is insufficient evidence to reach a conclusion about either the null or alternative hypothesis.",D:"There is insufficient evidence to accept the alternative hypothesis.",E:"There is sufficient evidence to reject the alternative hypothesis."},
-    ans:"A",
-    ex:{A:"Correct. p = 0.33 is far above any standard significance level (α = 0.05 or 0.01). We fail to reject H₀ — the data do not provide enough evidence to conclude the medication lowers blood pressure.",B:"Incorrect. We never "accept" H₀ in hypothesis testing. Failing to reject it means insufficient evidence against it, not that it's proven true.",C:"Incorrect. We can reach a clear conclusion: fail to reject H₀. A high p-value gives a definite (if undramatic) result.",D:"Incorrect. "Accept the alternative" is not standard statistical language; we either reject or fail to reject H₀.",E:"Incorrect. A p-value of 0.33 does not provide grounds to reject anything at standard significance levels."}},
-
-    {id:"u6-6",src:"AP Stats Unit 6 Review",diff:2,
-    q:"A random sample of 500 likely voters is polled just prior to a city election. Of these voters, 280 say they will vote to re-elect the mayor. Which of the following is a 95% confidence interval for the proportion of votes the mayor will receive in the election?",
-    ch:{A:"0.56 ± 1.645·√(0.56(1−0.56)/500)",B:"0.56 ± 1.645·√(0.56(1−0.56))·√(1/280 + 1/220)",C:"0.56 ± 1.96·√(0.56(1−0.56)/500)",D:"0.56 ± 1.96·(0.56/√500)",E:"0.56 ± 1.96·√(0.56(1−0.56))·√(1/280 + 1/220)"},
-    ans:"C",
-    ex:{A:"Incorrect. 1.645 is the z* critical value for a 90% CI, not 95%.",B:"Incorrect. Uses the wrong z* (1.645 = 90%) and the two-proportion SE formula, which is designed for comparing two independent groups.",C:"Correct. p̂ = 280/500 = 0.56; z* = 1.96 for 95%; SE = √(p̂(1−p̂)/n). This is the correct one-proportion confidence interval.",D:"Incorrect. The SE formula here omits the (1−p̂) term, using p̂/√n instead of the correct √(p̂(1−p̂)/n).",E:"Incorrect. The z* = 1.96 is correct but uses the two-proportion pooled SE formula, which applies to comparing two groups, not one proportion."}},
-
-    {id:"u6-7",src:"AP Stats Unit 6 Review",diff:1,
-    q:"In a group of 10 scores, the largest score is increased by 40 points. What will happen to the median?",
-    ch:{A:"It will increase by 4 points.",B:"It will increase by 10 points.",C:"It will increase by 40 points.",D:"It will stay the same.",E:"Unable to determine without data values."},
-    ans:"D",
-    ex:{A:"Incorrect. 40/10 = 4 has no meaningful interpretation here. Adding 40 to the maximum has no effect on the median.",B:"Incorrect. Changing only the largest value cannot move the median regardless of the specific scores.",C:"Incorrect. A change of 40 to the maximum value only affects the median if that value is also the 5th or 6th ordered value.",D:"Correct. With 10 scores, the median is the average of the 5th and 6th values when sorted. Increasing only the 10th (largest) value leaves all middle values unchanged, so the median stays the same.",E:"Incorrect. We can definitively determine the outcome: changing only the maximum never affects the median."}},
-
-    {id:"u6-8",src:"AP Stats Unit 6 Review",diff:2,
-    q:"Hospital administrators wish to determine the average length of stay for all surgical patients. A statistician determines that for a 95% confidence level estimate of the average length of stay to within ±0.50 days, 100 surgical patients' records would have to be examined. How many records should be looked at for a 95% confidence level estimate to within ±0.25 days?",
-    ch:{A:"25",B:"50",C:"200",D:"400",E:"There is not enough information given to determine the necessary sample size."},
-    ans:"D",
-    ex:{A:"Incorrect. Decreasing n to 25 makes the MOE larger, not smaller. Fewer records gives less precision.",B:"Incorrect. Halving n increases MOE by √2, not halves it. MOE ∝ 1/√n, so you need more, not fewer records.",C:"Incorrect. Doubling n reduces MOE by only a factor of √2 ≈ 1.41, which is insufficient to cut MOE in half.",D:"Correct. MOE ∝ 1/√n. To halve the MOE (from 0.50 to 0.25), you must quadruple n: 100 × 4 = 400.",E:"Incorrect. All necessary information is provided — the same population, same σ, same confidence level. Only the target MOE changes."}},
-
-    {id:"u6-9",src:"AP Stats Unit 6 Review",diff:2,
-    q:"In a clinic, 50 patients with sleep disorders are randomly assigned to one of two different groups. Patients in one group are given medication before bedtime. Patients in the other group are given blindfolds and played soft music at bedtime. Each patient is attached to a machine that records breathing patterns. From the patterns, it is possible to determine if the patient is awake or asleep. The data will be used to decide which method is more effective in helping patients with sleep disorders. Which statement is correct in the context of this experiment?",
-    ch:{A:"This is a single-blind experiment, because only one group uses blindfolds.",B:"This is a single-blind experiment, because only patients and not doctors use blindfolds.",C:"This is a double-blind experiment, because patients are blindfolded and the doctor does not know which patient receives which treatment.",D:"This experiment cannot be a single-blind experiment, because many patients do not like to be blindfolded.",E:"This experiment cannot be a double-blind experiment, because patients will know which treatment they are receiving, although the examining doctor might not."},
-    ans:"E",
-    ex:{A:"Incorrect. "Single-blind" in statistics refers to whether subjects know their treatment assignment — the physical sleep blindfolds worn during treatment are an entirely different concept.",B:"Incorrect. Same confusion — physical blindfolds worn to sleep have nothing to do with experimental blinding terminology in research design.",C:"Incorrect. Double-blind requires both subjects AND evaluators to be unaware of treatment assignment. Patients obviously know whether they took a pill or wore a blindfold with music.",D:"Incorrect. Patient comfort preferences about blindfolds are irrelevant to classifying the study's blinding structure.",E:"Correct. Patients cannot be blinded — they know which treatment they received. Since at least one party knows their assignment, true double-blinding is impossible. Single-blind may be achievable if the breathing machine evaluator doesn't know which patient got which treatment."}},
-
-    {id:"u6-10",src:"AP Stats Unit 6 Review",diff:1,
-    q:"A company wishes to determine the relationship between the number of days spent training employees and their performance on a job aptitude test. Collected data result in a least-squares regression line of ŷ = 12.1 + 6.2x, where x is the number of training days and ŷ is the predicted score. Which is the correct interpretation of the slope and y-intercept?",
-    ch:{A:"The base score on the test is 12.1 and for every day of training one would expect, on average, an increase of 6.2 on the aptitude test.",B:"The base score on the test is 6.2 and for every day of training one would expect, on average, an increase of 12.1 on the aptitude test.",C:"The mean number of days is 12.1 and for every additional 6.2 days of training one would expect, on average, an increase of 1 unit on the aptitude test.",D:"The mean number of days is 6.2 and for every additional 12.1 days of training one would expect, on average, an increase of 1 unit on the aptitude test.",E:"The mean number of training days is 12.1 and for every day of training one would expect, on average, an increase of 6.2 on the aptitude test."},
-    ans:"A",
-    ex:{A:"Correct. The y-intercept (12.1) is the predicted score when x = 0 training days (the base score). The slope (6.2) means each additional training day adds 6.2 points to the predicted score on average.",B:"Incorrect. This swaps slope and intercept — 6.2 is the rate of change (slope), not the base score.",C:"Incorrect. 12.1 is the y-intercept (predicted score at zero days), not the mean number of training days.",D:"Incorrect. 6.2 is the slope coefficient (points added per training day), not the mean number of days.",E:"Incorrect. 12.1 is the y-intercept (the predicted score when no training has occurred), not the mean number of training days."}},
-
-    {id:"u6-11",src:"AP Stats Unit 6 Review",diff:2,
-    q:"Suppose X and Y are independent random variables with E(X) = 780, Var(X) = 75, E(Y) = 430, and Var(Y) = 25. Determine Var(X − Y).",
-    ch:{A:"7.07",B:"10",C:"50",D:"100",E:"Cannot determine"},
-    ans:"D",
-    ex:{A:"Incorrect. 7.07 ≈ √50 — this is the standard deviation if the variance were 50. This confuses variance with standard deviation.",B:"Incorrect. 10 = √100 is the standard deviation of X−Y, not the variance itself.",C:"Incorrect. 50 = 75 − 25 comes from subtracting variances. A common mistake: for independent variables, variances always ADD for both sums and differences.",D:"Correct. Var(X−Y) = Var(X) + Var(Y) = 75 + 25 = 100. The key rule: when variables are independent, variances add regardless of whether the combination is X+Y or X−Y.",E:"Incorrect. Since independence is explicitly stated, the variance addition rule applies directly."}},
-
-    {id:"u6-12",src:"AP Stats Unit 6 Review",diff:3,
-    q:"A soft drink dispenser can be adjusted to deliver any fixed number of ounces on average. If the machine is operating with a standard deviation of 0.3 ounce, what should the mean setting be so that a 12-ounce cup will overflow less than 1% of the time? Assume a normal distribution for ounces delivered.",
-    ch:{A:"11.23 ounces",B:"11.30 ounces",C:"11.70 ounces",D:"12.70 ounces",E:"12.77 ounces"},
-    ans:"B",
-    ex:{A:"Incorrect. This uses the wrong z-value or an arithmetic error in the reverse normal calculation.",B:"Correct. We need P(X > 12) < 0.01, so 12 oz must be at the 99th percentile. The z-score for the 99th percentile is 2.326. Solving: μ = 12 − 2.326(0.3) = 12 − 0.698 ≈ 11.30 oz.",C:"Incorrect. Uses z ≈ 1.0 (the 84th percentile) — the cup would overflow far more than 1% of the time.",D:"Incorrect. A mean of 12.70 > 12 means the cup overflows more than 50% of the time — completely opposite of the goal.",E:"Incorrect. Any mean set above 12 oz causes overflow more than half the time by definition."}},
-
-    {id:"u6-13",src:"AP Stats Unit 6 Review",diff:1,
-    q:"Suppose the correlation between two variables is r = 0.19. What is the new correlation if 0.23 is added to all values of the x-variable, every value of the y-variable is doubled, and the two variables are interchanged?",
-    ch:{A:"−0.84",B:"−0.42",C:"−0.19",D:"0.19",E:"−0.84"},
-    ans:"D",
-    ex:{A:"Incorrect. Negative correlation arises only from multiplying a variable by a negative number. None of these three operations involve multiplication by a negative.",B:"Incorrect. None of these linear transformations change the magnitude or sign of r in any way.",C:"Incorrect. The sign of r is not flipped by adding a constant, multiplying by a positive, or swapping x and y.",D:"Correct. Correlation r is invariant under all three operations: (1) adding any constant to x; (2) multiplying y by any positive constant; (3) swapping x and y. Therefore r remains 0.19.",E:"Incorrect. Same error as A — none of these operations produce a negative correlation."}},
-
-    {id:"u6-14",src:"AP Stats Unit 6 Review",diff:2,
-    q:"Sherry conducts an experiment, collects data, and computes a z-test statistic from the data. She uses a two-sided test and finds that the test statistic is statistically significant. What would Sherry have concluded if she had conducted a one-sided test?",
-    ch:{A:"It would be significant since the p-value for a one-sided test is half the p-value for a two-sided test.",B:"It would be significant since the p-value for a one-sided test is twice the p-value for a two-sided test.",C:"It would not be significant since the p-value for a one-sided test is half the p-value for a two-sided test.",D:"It is impossible to tell since the p-value for a one-sided test is twice the p-value for a two-sided test. We do not know the p-value or the significance level.",E:"It is impossible to tell since we do not know on which side the test is conducted."},
-    ans:"A",
-    ex:{A:"Correct. For a z-test, the one-sided p-value (in the direction the data point) is exactly half the two-sided p-value. Since the two-sided result was already significant, the even smaller one-sided p-value is also significant.",B:"Incorrect. The one-sided p-value is HALF of the two-sided p-value — not twice. You look at one tail instead of both.",C:"Incorrect. Half the p-value means it's smaller, making it MORE significant, not less.",D:"Incorrect. The relationship is mathematically defined: p-value(one-sided) = p-value(two-sided)/2. No extra information is needed.",E:"Incorrect. We know the data were significant in some direction. The one-sided test in that direction will always be significant when the two-sided test is."}},
-
-    {id:"u6-15",src:"AP Stats Unit 6 Review",diff:3,
-    q:"A cookbook has recipes for 10 chicken dinners, 10 beef dinners, and 15 vegetarian dinners. Pat plans dinner by picking a recipe at random from the book. Every one of the 35 meals has an equal chance of being selected each time Pat plans a dinner. What is the probability that Pat prepares exactly 3 vegetarian dinners over 7 consecutive days?",
-    ch:{A:"3/7",B:"(15/35)^3",C:"(15/35)^3(20/35)^4",D:"3(15/35)(20/35)",E:"(7 choose 3)(15/35)^3(20/35)^4"},
-    ans:"E",
-    ex:{A:"Incorrect. 3/7 is just the proportion of vegetarian days — it completely ignores probability theory and the number of possible arrangements.",B:"Incorrect. This gives the probability that the first 3 days are vegetarian, ignoring the other 4 days entirely.",C:"Incorrect. Correctly accounts for both vegetarian and non-vegetarian day probabilities but omits the C(7,3) = 35 factor that counts all orderings.",D:"Incorrect. This expression does not correspond to any correct probability formula for this binomial scenario.",E:"Correct. Binomial: n = 7, k = 3, p = 15/35. C(7,3) = 35 counts all orderings of 3 vegetarian days in 7; (15/35)³ is the probability of 3 vegetarian picks; (20/35)⁴ is the probability of 4 non-vegetarian picks."}},
-
-    {id:"u6-16",src:"AP Stats Unit 6 Review",diff:3,
-    q:"A researcher is trying to find a 90% confidence interval for the proportion of human pregnancies that run longer than 270 days. The researcher wants a margin of error no larger than 0.02. Of the following sample sizes, which is the smallest that will accomplish this goal?",
-    ch:{A:"2,402",B:"1,692",C:"1,028",D:"625",E:"133"},
-    ans:"B",
-    ex:{A:"Incorrect. 2,402 is the required sample size for a 95% CI (z* = 1.96) with ME = 0.02, not a 90% CI.",B:"Correct. For 90% CI, z* = 1.645. Using the conservative p = 0.5: n = (z*/ME)² × 0.25 = (1.645/0.02)² × 0.25 = 6765.06 × 0.25 = 1691.3. Round up to 1,692.",C:"Incorrect. 1,028 is too small; it would produce a margin of error exceeding 0.02.",D:"Incorrect. 625 gives a margin of error much larger than 0.02 at 90% confidence.",E:"Incorrect. Far too small; would produce a margin of error many times larger than 0.02."}},
-
-    {id:"u6-17",src:"AP Stats Unit 6 Review",diff:2,
-    q:"Chelsea designs an experiment to measure the difference in subjects' pulse rates while listening to two recordings of the same piece of music, one with a strong drum track and one with the drum track removed. She works with 50 subjects, measuring each subject's pulse rates in response to each recording. The order in which each subject listens to the two tracks is randomized, and a period of time is allowed between trials. Which would be the most appropriate statistical test in this situation?",
-    ch:{A:"Matched pairs t-test",B:"One-sample proportion z-test",C:"Chi-square test for homogeneity of proportions",D:"One-sample t-test",E:"Two-sample t-test"},
-    ans:"A",
-    ex:{A:"Correct. The same 50 subjects are measured under both conditions. Computing each person's difference and running a matched pairs t-test controls for individual baseline pulse rate variation.",B:"Incorrect. Pulse rate is a quantitative measurement, not a proportion. No successes/failures to count here.",C:"Incorrect. Chi-square tests apply to categorical data. Pulse rate is continuous and quantitative.",D:"Incorrect. A one-sample t-test compares one group's mean to a hypothesized value, not paired measurements under two conditions.",E:"Incorrect. Two-sample t-test assumes two independent groups. The same subjects provide both measurements, making the data dependent (paired)."}},
-
-    {id:"u6-18",src:"AP Stats Unit 6 Review",diff:1,
-    q:"A large-sample 99% confidence interval for the proportion of American adults that believe climate change is a serious problem is (0.61, 0.69). What is the sample proportion from which this interval was constructed?",
-    ch:{A:"0.04",B:"0.08",C:"0.65",D:"0.66",E:"It could be any number between 0.61 and 0.69"},
-    ans:"C",
-    ex:{A:"Incorrect. 0.04 is the margin of error = (0.69 − 0.61)/2 = 0.04, not the sample proportion.",B:"Incorrect. 0.08 = 0.69 − 0.61 is the total width of the CI, not the center.",C:"Correct. The sample proportion is always the midpoint of the confidence interval: p̂ = (0.61 + 0.69)/2 = 0.65.",D:"Incorrect. The midpoint is (0.61 + 0.69)/2 = 1.30/2 = 0.65, not 0.66.",E:"Incorrect. The sample proportion is uniquely determined — it is exactly the center of the interval, not any value within it."}},
-
-    {id:"u6-19",src:"AP Stats Unit 6 Review",diff:2,
-    q:"For the nine planets in the solar system, a list is made of the length of a year Y (measured in Earth years) and the mean orbital radius R (measured in millions of km). A regression analysis yields ŷ = −13 + 0.0408R, r² = 0.98, and a residual plot. Which statement is the most accurate about the regression results?",
-    ch:{A:"The value of r² shows there is a strong linear relationship between length of year and mean orbital radius.",B:"The residual plot shows there is a strong linear relationship between length of year and mean orbital radius.",C:"The slope of the regression line shows there is a negative association between length of year and mean orbital radius.",D:"The regression line underpredicts the length of a year for a planet with mean orbital radius 100 million km.",E:"The regression line makes a very accurate prediction for the length of a year for a planet with mean orbital radius 100 million km."},
-    ans:"D",
-    ex:{A:"Incorrect. r² = 0.98 seems high, but a curved (nonrandom) residual plot reveals the relationship is nonlinear. High r² alone can be misleading when the wrong model form is used.",B:"Incorrect. A curved residual plot is evidence AGAINST linearity — systematic patterns in residuals signal the linear model is inadequate.",C:"Incorrect. The slope 0.0408 is positive: as orbital radius increases, year length increases.",D:"Correct. The curved residual plot shows the linear model systematically underpredicts at certain radii. At 100 million km, the true nonlinear relationship produces a longer year than the linear model predicts.",E:"Incorrect. The curved residual plot reveals poor predictions at many orbital radii, including around 100 million km."}},
-
-    {id:"u6-20",src:"AP Stats Unit 6 Review",diff:2,
-    q:"An executive at an advertising firm must decide whether to continue with the current ad campaign for a product or move on to a new campaign. The firm tested the two campaigns with focus groups, using a null hypothesis that there is no difference in the campaigns, and an alternative hypothesis that the new campaign is superior at motivating consumers to shop at the store. Which best describes the consequences of a Type II error?",
-    ch:{A:"The firm will continue with the old campaign even though the new campaign is better.",B:"The firm will switch to the new campaign even though the old campaign is better.",C:"The firm will continue with the old campaign even though there is no difference in the two campaigns.",D:"The firm will switch to the new campaign even though there is no difference in the two campaigns.",E:"The firm will switch to the new campaign even though the evidence is inconclusive."},
-    ans:"A",
-    ex:{A:"Correct. Type II error = failing to reject a false H₀. The new campaign is actually better (H₀ is false), but the test fails to detect this. The firm keeps the old campaign, missing out on the better one.",B:"Incorrect. Switching when the old campaign is actually better = rejecting a true H₀ = Type I error.",C:"Incorrect. If there's truly no difference and we keep the old campaign, that's the correct decision — not an error.",D:"Incorrect. Switching when there's actually no difference = rejecting a true H₀ = Type I error.",E:"Incorrect. This doesn't correspond to the formal definition of either error type."}},
-
-    {id:"u6-21",src:"AP Stats Unit 6 Review",diff:3,
-    q:"Six capsules of drug A took an average of 75 seconds with a standard deviation of 1.4 seconds to dissolve, while the average time for six capsules of drug B was 71 seconds with a standard deviation of 1.7 seconds. Establish a 99% confidence interval estimate for the difference in dissolving time between the two brands, assuming normal distributions.",
-    ch:{A:"4 ± 1.55",B:"4 ± 2.48",C:"4 ± 2.56",D:"4 ± 2.85",E:"4 ± 3.10"},
-    ans:"D",
-    ex:{A:"Incorrect. The margin of error is too small — uses a critical value appropriate for a lower confidence level.",B:"Incorrect. Corresponds to a lower confidence level or incorrect degrees of freedom calculation.",C:"Incorrect. Close but uses slightly different t* or rounding in the SE.",D:"Correct. Point estimate = 75 − 71 = 4. SE = √(1.4²/6 + 1.7²/6) = √(0.3267 + 0.4817) ≈ 0.899. With df ≈ 9–10, t* ≈ 3.169 for 99%. MOE = 3.169 × 0.899 ≈ 2.85.",E:"Incorrect. Slightly too large; possibly uses more conservative df = 5 instead of the Welch approximation."}},
-
-    {id:"u6-22",src:"AP Stats Unit 6 Review",diff:2,
-    q:"A manufacturer of ready-bake cake mixes is interested in designing an experiment to test the effects of four different temperature levels, two different types of pans (glass vs. tin), and three different types of ovens (gas, electric, and microwave) on the texture of its cakes. Which best describes the experiment that would be conducted?",
-    ch:{A:"A completely randomized design with 9 treatment groups",B:"A completely randomized design with 24 treatment groups",C:"A randomized blocked design, blocked on temperature, with 6 treatment groups",D:"A randomized blocked design, blocked on type of pan, with 12 treatment groups",E:"A randomized blocked design, blocked on oven, with 8 treatment groups"},
-    ans:"B",
-    ex:{A:"Incorrect. 9 = 3 × 3 only accounts for two of the three factors being studied.",B:"Correct. All three factors are being investigated together in a factorial design: 4 temperatures × 2 pan types × 3 oven types = 24 treatment combinations. This is a completely randomized factorial design.",C:"Incorrect. Blocking on temperature would treat it as a nuisance variable to be controlled, but temperature is one of the factors being studied.",D:"Incorrect. Blocking on pan type treats it as a nuisance variable, reducing the design to studying only two factors.",E:"Incorrect. Blocking on oven type treats it as a nuisance variable, ignoring its status as a factor of interest."}},
-
-    {id:"u6-23",src:"AP Stats Unit 6 Review",diff:2,
-    q:"Seamus is deciding whether to use a 95% confidence interval or a 99% confidence interval for the population mean when analyzing a large sample he has randomly collected from a population. Which statement about the intervals is true?",
-    ch:{A:"The margin of error for the 95% confidence interval is 5% of the sample mean.",B:"The margin of error for the 99% confidence interval is 2.576.",C:"If the sample size is at least 1,000, the margin of error for the 99% confidence interval will be much larger than the margin of error for the 95% confidence interval.",D:"The 99% confidence interval will be wider than the 95% confidence interval regardless of the size of Seamus's sample.",E:"The width of the 99% confidence interval will be smaller than the margin of error for the 95% confidence interval."},
-    ans:"D",
-    ex:{A:"Incorrect. MOE is not a percentage of the sample mean. It equals z* × SE, which depends on population variability and n.",B:"Incorrect. 2.576 is the z* critical value for 99% — not the MOE. The actual MOE = 2.576 × σ/√n.",C:"Incorrect. The 99% CI is always wider, but a large n makes both intervals narrow. The 99% remains wider, just both are narrower — not much larger in absolute terms.",D:"Correct. A higher confidence level always requires a wider interval, regardless of sample size. z* = 2.576 (99%) > z* = 1.96 (95%) for any given dataset.",E:"Incorrect. The 99% CI is wider, so its MOE is larger than the 95% MOE — the opposite of this claim."}},
-
-    {id:"u6-24",src:"AP Stats Unit 6 Review",diff:2,
-    q:"The boxplots below summarize data sets I and II. Which of the following statements is a correct conclusion that can be drawn from these boxplots?",
-    ch:{A:"The 40th percentile of data set II is smaller than the 60th percentile of data set I.",B:"Data set I has a smaller interquartile range.",C:"About 25% of the values in data set I are between 65 and 84.",D:"Data set I contains more data points.",E:"Data set II has a larger range."},
-    ans:"A",
-    ex:{A:"Correct. The 40th percentile of any distribution lies below its median (50th percentile). Based on the boxplots, the upper portions of data set I's distribution extend above data set II's median, supporting this conclusion.",B:"Incorrect. Based on the boxplots, data set I does not have the smaller IQR (box width).",C:"Incorrect. The specific interval 65–84 containing exactly 25% requires seeing the actual boxplot values not described in the text.",D:"Incorrect. Boxplots display only the five-number summary — they communicate nothing about how many data points are in a dataset.",E:"Incorrect. Data set II does not have the larger range based on typical versions of this problem."}},
-
-    {id:"u6-25",src:"AP Stats Unit 6 Review",diff:1,
-    q:"Which of the following statements is true regarding a one-sample t-interval?",
-    ch:{A:"It is used to estimate the population standard deviation.",B:"It is used to compare the means of two independent samples.",C:"It requires the population distribution to be normally distributed.",D:"It is used to estimate the population mean when the population standard deviation is unknown.",E:"It is used to estimate the population proportion."},
-    ans:"D",
-    ex:{A:"Incorrect. CIs for the population standard deviation use the chi-square distribution, not the t-distribution.",B:"Incorrect. Comparing two independent means requires a two-sample t-interval.",C:"Incorrect. For large n, the CLT ensures the sampling distribution of x̄ is approximately normal even without a normal population. Strict normality is only critical for very small samples.",D:"Correct. The one-sample t-interval estimates the population mean μ using x̄ ± t*(s/√n), specifically because the population SD σ is unknown.",E:"Incorrect. Estimating a proportion requires a z-interval: p̂ ± z*√(p̂(1−p̂)/n)."}},
-
-    {id:"u6-26",src:"AP Stats Unit 6 Review",diff:3,
-    q:"The number of accidents per day at a large factory is noted for each of 64 days with x̄ = 3.58 and s = 1.52. With what degree of confidence can we assert that the mean number of accidents per day at the factory is between 3.20 and 3.96?",
-    ch:{A:"48%",B:"63%",C:"90%",D:"95%",E:"99%"},
-    ans:"D",
-    ex:{A:"Incorrect. z = 2.0 corresponds to much higher than 48% confidence.",B:"Incorrect. z ≈ 0.93 gives roughly 63% confidence. Our calculated z-value is 2.0.",C:"Incorrect. z = 1.645 gives 90% confidence. Our z-value is 2.0, which is higher.",D:"Correct. SE = s/√n = 1.52/√64 = 0.19. Half-width = (3.96 − 3.58)/2 = 0.19. z = 0.19/0.19 = 2.0. P(−2 < Z < 2) ≈ 95.44% ≈ 95%.",E:"Incorrect. z = 2.576 gives 99% confidence. Our z-value is only 2.0."}},
-
-    {id:"u6-27",src:"AP Stats Unit 6 Review",diff:2,
-    q:"To test which of two fuel additives results in better gas mileage, the average miles per gallon is noted when 40 cars are run for 1 week using the first additive, and then the average miles per gallon is calculated for the same 40 cars when they are run for another week. What is the conclusion at a 10% significance level if a two-sample hypothesis test with p-value 0.25 is used?",
-    ch:{A:"The observed difference in miles per gallon is significant.",B:"The observed difference in miles per gallon is not significant.",C:"A conclusion is not possible without knowing the mean miles per gallon obtained using each additive.",D:"A conclusion is not possible without knowing both the mean and the standard deviation resulting from the use of each additive.",E:"A two-sample hypothesis test should not be used in this example."},
-    ans:"E",
-    ex:{A:"Incorrect. p = 0.25 > 0.10 is not significant, but the bigger issue is the test itself is wrong.",B:"Incorrect. While p = 0.25 is not significant, the primary problem is using an inappropriate test design.",C:"Incorrect. The fundamental flaw is the choice of test, not missing summary statistics.",D:"Incorrect. The real issue is that the test assumes independence when the data are paired.",E:"Correct. The SAME 40 cars were tested with both additives — this is a matched pairs (dependent) design. A two-sample t-test assumes two independent groups. A matched pairs t-test is the appropriate procedure here."}},
-
-    {id:"u6-28",src:"AP Stats Unit 6 Review",diff:1,
-    q:"Which of the following can be used to show a cause-and-effect relationship between two variables?",
-    ch:{A:"A census",B:"A controlled experiment",C:"An observational study",D:"A sample survey",E:"A cross-sectional survey"},
-    ans:"B",
-    ex:{A:"Incorrect. A census measures every individual but doesn't manipulate any variable, so causation cannot be established.",B:"Correct. Only a controlled experiment — with random assignment to treatments and control of confounding variables — can establish a cause-and-effect relationship.",C:"Incorrect. Observational studies reveal associations but confounding variables prevent causal conclusions.",D:"Incorrect. Sample surveys describe population characteristics but don't manipulate any variable.",E:"Incorrect. Cross-sectional surveys capture a snapshot in time and cannot isolate causal mechanisms."}},
-
-    {id:"u6-29",src:"AP Stats Unit 6 Review",diff:3,
-    q:"A recent study of health service costs for coronary angioplasty versus coronary artery bypass surgery at a London hospital showed an average cost of £6176 with a standard deviation of £329 for 231 angioplasties and an average cost of £8164 with a standard deviation of £264 for 221 bypass surgeries. Is this sufficient evidence to say that the average cost of angioplasty is less than the average cost of bypass surgery?",
-    ch:{A:"P < .001, so this is very strong evidence that angioplasty costs less.",B:"P is between .001 and .01, so this is strong evidence that angioplasty costs less.",C:"P is between .01 and .05, so this is moderate evidence that angioplasty costs less.",D:"P is between .05 and .10, so there is some evidence that angioplasty costs less.",E:"P > .10, so there is little evidence that angioplasty costs less."},
-    ans:"A",
-    ex:{A:"Correct. z = (6176 − 8164)/√(329²/231 + 264²/221) ≈ −1988/28 ≈ −71. This enormous test statistic yields a p-value astronomically below 0.001.",B:"Incorrect. The p-value is far below 0.001 given this near-impossible z-score.",C:"Incorrect. With n > 200 for each group and a £2,000 cost difference relative to SDs under £330, the evidence is overwhelming.",D:"Incorrect. Essentially opposite of the truth.",E:"Incorrect. This is about as strong as statistical evidence gets."}},
-
-    {id:"u6-30",src:"AP Stats Unit 6 Review",diff:3,
-    q:"The number of adults living in homes on a randomly selected city block is described by the following probability distribution: x = 1, 2, 3, 4 with probabilities 0.25, 0.50, 0.15, 0.10. What is the standard deviation of the probability distribution?",
-    ch:{A:"0.50",B:"0.62",C:"0.79",D:"0.89",E:"2.10"},
-    ans:"D",
-    ex:{A:"Incorrect. 0.50 does not result from correctly applying the variance formula to this distribution.",B:"Incorrect. Arithmetic error likely in computing E(X²) or the variance.",C:"Incorrect. 0.79 is the VARIANCE — you still need to take the square root to get the standard deviation.",D:"Correct. E(X) = 1(.25)+2(.50)+3(.15)+4(.10) = 0.25+1.00+0.45+0.40 = 2.10. E(X²) = 1(.25)+4(.50)+9(.15)+16(.10) = 0.25+2.00+1.35+1.60 = 5.20. Var = 5.20 − 2.10² = 0.79. SD = √0.79 ≈ 0.89.",E:"Incorrect. 2.10 is the mean E(X), not the standard deviation."}},
-
-    {id:"u6-31",src:"AP Stats Unit 6 Review",diff:2,
-    q:"Which of the following statements are true?\nI. Random sampling is a good way to reduce response bias.\nII. To guard against bias from undercoverage, use a convenience sample.\nIII. Increasing the sample size tends to reduce survey bias.\nIV. To guard against nonresponse bias, use a mail-in survey.",
-    ch:{A:"I only",B:"II only",C:"III only",D:"IV only",E:"None of the above"},
-    ans:"E",
-    ex:{A:"Incorrect. I is false. Random sampling reduces variability and undercoverage, but not response bias. People can still give inaccurate answers regardless of how they were selected.",B:"Incorrect. II is false. Convenience samples make undercoverage worse by systematically excluding hard-to-reach groups.",C:"Incorrect. III is false. Larger samples reduce variability (margin of error), not bias. A large biased sample is still biased — bias and variability are completely different concepts.",D:"Incorrect. IV is false. Mail-in surveys typically have extremely low response rates, which increases nonresponse bias.",E:"Correct. All four statements are false. This is a classic question testing the critical distinction between bias and variability in sampling."}},
-
-    {id:"u6-32",src:"AP Stats Unit 6 Review",diff:2,
-    q:"A random sample of 150 workers at a local factory found that 72% of them had volunteered time at a local charity in the past year. Determine the standard error of the sample proportion.",
-    ch:{A:"0.001",B:"0.016",C:"0.037",D:"0.057",E:"0.069"},
-    ans:"C",
-    ex:{A:"Incorrect. 0.001 ≈ SE² (the variance of p̂), not the standard error itself.",B:"Incorrect. Results from an incorrect formula or a different n value.",C:"Correct. SE = √(p̂(1−p̂)/n) = √(0.72 × 0.28 / 150) = √(0.2016/150) = √0.001344 ≈ 0.0367.",D:"Incorrect. Results from omitting the (1−p̂) term in the formula.",E:"Incorrect. Too large; corresponds to a different p̂ or sample size."}},
-
-    {id:"u6-33",src:"AP Stats Unit 6 Review",diff:3,
-    q:"Nine subjects, 87 to 96 years old, were given 8 weeks of progressive resistance weight training. Strength before and after training for each individual was measured as maximum weight lifted by left knee extension. Find a 95% confidence interval estimate for the strength gain.",
-    ch:{A:"11.61 ± 3.03",B:"11.61 ± 3.69",C:"11.61 ± 3.76",D:"19.11 ± 1.25",E:"19.11 ± 3.69"},
-    ans:"C",
-    ex:{A:"Incorrect. Slightly too small a margin — likely uses t* = 2.262 (df = 9) instead of the correct value.",B:"Incorrect. Uses t* = 2.262 with slight arithmetic error in the standard error.",C:"Correct. n = 9 paired differences, df = n − 1 = 8, t* = 2.306 for a 95% CI. Mean gain = 11.61. The correct interval is 11.61 ± 3.76.",D:"Incorrect. 19.11 is the wrong mean gain — the actual mean difference in strength is 11.61, not 19.11.",E:"Incorrect. Uses the wrong mean value (19.11 instead of 11.61)."}},
-
-    {id:"u6-34",src:"AP Stats Unit 6 Review",diff:1,
-    q:"The Department of Health for a Midwestern state conducted an observational study in which users of public restrooms at several sites throughout the state were discreetly observed. Of the 634 females observed, 476 washed their hands. Of the 561 males observed, 326 washed their hands. What significance test should be used to determine whether these data provide sufficient evidence to reject the hypothesis that the proportion of females in this state who wash their hands when using a public restroom is the same as the proportion of males in this state who wash their hands when using a public restroom?",
-    ch:{A:"One-proportion z-test",B:"Two-proportion z-test",C:"One-sample z-test for a mean",D:"One-sample t-test for a mean",E:"Two-sample t-test for means"},
-    ans:"B",
-    ex:{A:"Incorrect. A one-proportion z-test compares a single sample proportion to a fixed hypothesized value. Here we have two separate groups to compare.",B:"Correct. We are comparing two independent proportions (female hand-washers vs male hand-washers). The two-proportion z-test is the correct procedure.",C:"Incorrect. This tests a population mean against a hypothesized value — unrelated to comparing two proportions.",D:"Incorrect. Tests a mean using the t-distribution; not appropriate for categorical outcomes like washed/didn't wash.",E:"Incorrect. Two-sample t-test compares two means. The outcome here is categorical (washed/didn't wash), so proportions, not means, are analyzed."}},
-
-    {id:"u6-35",src:"AP Stats Unit 6 Review",diff:2,
-    q:"When a virus is placed on a tobacco leaf, small lesions appear on the leaf. To compare the mean number of lesions produced by two different strains of virus, one strain is applied to half of each of 8 tobacco leaves, and the other strain is applied to the other half of each leaf. The strain that goes on the right half of the leaf is decided by a coin flip. What is the number of degrees of freedom associated with the appropriate t-test for testing whether there is a difference between the mean number of lesions per leaf produced by the two strains?",
-    ch:{A:"7",B:"8",C:"11",D:"14",E:"16"},
-    ans:"A",
-    ex:{A:"Correct. Both strains are applied to the same leaf — this is a matched pairs design. We compute one difference per leaf. n = 8 pairs, so df = n − 1 = 7.",B:"Incorrect. 8 is the number of leaves (sample size), not the degrees of freedom. df = n − 1 = 7.",C:"Incorrect. 11 might come from Welch's df formula for independent two-sample t-tests — wrong for paired data.",D:"Incorrect. 14 = 2(8) − 2 is the degrees of freedom for an independent two-sample t-test.",E:"Incorrect. 16 = 2(8) doesn't correspond to any standard degrees of freedom formula here."}},
-
-    {id:"u6-36",src:"AP Stats Unit 6 Review",diff:3,
-    q:"In a carnival game, a person can win a prize by guessing which one of 5 identical boxes contains the prize. After each guess, regardless of whether the prize was won, a new prize is randomly placed in one of the 5 boxes. If a person makes 4 guesses, what is the probability that the person wins a prize exactly 2 times?",
-    ch:{A:"2!/5!",B:"(0.2)^2 / (0.8)^2",C:"2(0.2)(0.8)",D:"(0.2)^2(0.8)^2",E:"(4 choose 2)(0.2)^2(0.8)^2"},
-    ans:"E",
-    ex:{A:"Incorrect. 2!/5! is a permutation ratio with no applicable meaning for this probability problem.",B:"Incorrect. Dividing probabilities like this has no probabilistic interpretation for this context.",C:"Incorrect. Resembles a partial binomial expression for n = 2, not n = 4, and is missing the binomial coefficient.",D:"Incorrect. Gives the probability of one specific ordering (win-win-lose-lose) but ignores C(4,2) = 6 other orderings of exactly 2 wins in 4 trials.",E:"Correct. Binomial distribution: n = 4, k = 2, p = 1/5 = 0.2. C(4,2) = 6 counts all orderings; (0.2)² is the probability of exactly 2 wins; (0.8)² is the probability of exactly 2 losses."}},
-
-    {id:"u6-37",src:"AP Stats Unit 6 Review",diff:2,
-    q:"A survey conducted by a national news network asked a random sample of U.S. adults whether they get most of their information about current events from newspapers, television, the internet, or some other source. The results are reported by age group. How would you calculate the probability that a person gets their information from the internet given that they are over the age of 55?",
-    ch:{A:"5/65",B:"5/103",C:"5/295",D:"65/295",E:"103/295"},
-    ans:"B",
-    ex:{A:"Incorrect. 65 is not the total number of people over 55 — this uses the wrong denominator.",B:"Correct. Conditional probability: P(internet | over 55) = (people over 55 who use internet) / (total over 55) = 5/103. We restrict the sample space to the over-55 group.",C:"Incorrect. 5/295 is the unconditional (marginal) probability of using the internet — not conditional on being over 55.",D:"Incorrect. 65/295 gives the proportion of some other category, not the conditional probability asked for.",E:"Incorrect. 103/295 = P(over 55) is the probability of being in the over-55 group — that's the condition itself, not the conditional probability."}},
-
-    {id:"u6-38",src:"AP Stats Unit 6 Review",diff:2,
-    q:"A researcher selects a random sample of size n from a population and uses the collected data to compute a 95% confidence interval for the mean of the population. If the same data were used to compute a second confidence interval, which of the following would produce a confidence interval with a larger margin of error?",
-    ch:{A:"Increasing the confidence level",B:"Decreasing the confidence level",C:"Increasing the sample size",D:"Computing the interval n times so that approximately 5% of these intervals will be larger",E:"None of the above can guarantee a larger margin of error"},
-    ans:"A",
-    ex:{A:"Correct. MOE = z* × (s/√n). Increasing the confidence level (e.g., from 95% to 99%) increases z* (from 1.96 to 2.576), which directly increases MOE with the same data.",B:"Incorrect. Decreasing the confidence level reduces z*, making the MOE smaller, not larger.",C:"Incorrect. The problem specifies the same data, so n is fixed. You cannot change the sample size after the fact.",D:"Incorrect. Repeating the identical calculation with the same data yields the same interval every time.",E:"Incorrect. Option A definitively guarantees a larger MOE by increasing the z* critical value."}}
+    {
+      id: 1,
+      question: "What is the correct interpretation of a 95% confidence interval?",
+      options: [
+        "There is a 95% chance that the true parameter is in this interval",
+        "If we repeated this procedure many times, 95% of the intervals would contain the true parameter",
+        "95% of the data falls within this interval",
+        "We are 95% confident that the sample proportion is correct"
+      ],
+      correct: 1,
+      explanation: "A 95% confidence interval means that if we repeated the sampling procedure many times, 95% of the resulting intervals would contain the true population parameter."
+    },
+    {
+      id: 2,
+      question: "Which condition is NOT required for a one-sample z-interval for a proportion?",
+      options: [
+        "Random sample",
+        "10% condition (n ≤ 10% of population)",
+        "Large Counts condition (np ≥ 10 and n(1-p) ≥ 10)",
+        "Population must be normally distributed"
+      ],
+      correct: 3,
+      explanation: "For proportions, we don't need the population to be normally distributed. The sampling distribution of p-hat becomes approximately normal due to the Central Limit Theorem when the Large Counts condition is met."
+    },
+    {
+      id: 3,
+      question: "A researcher wants to estimate the proportion of voters who support a candidate with a margin of error of 3% at 95% confidence. What sample size is needed if no prior estimate is available?",
+      options: [
+        "752",
+        "1068",
+        "1849",
+        "2401"
+      ],
+      correct: 1,
+      explanation: "Using p* = 0.5 (most conservative), n = (z*/ME)² × p*(1-p*) = (1.96/0.03)² × 0.5 × 0.5 = 1067.11, rounded up to 1068."
+    },
+    {
+      id: 4,
+      question: "In a hypothesis test, what does the p-value represent?",
+      options: [
+        "The probability that the null hypothesis is true",
+        "The probability that the alternative hypothesis is true",
+        "The probability of observing data as extreme as ours, assuming the null hypothesis is true",
+        "The probability of making a Type I error"
+      ],
+      correct: 2,
+      explanation: "The p-value is the probability of obtaining results as extreme as (or more extreme than) the observed results, assuming the null hypothesis is true."
+    },
+    {
+      id: 5,
+      question: "A 90% confidence interval for a proportion is (0.42, 0.58). What can we conclude about a hypothesis test of H₀: p = 0.50 vs Hₐ: p ≠ 0.50 at α = 0.10?",
+      options: [
+        "Reject H₀ - 0.50 is not in the interval",
+        "Fail to reject H₀ - 0.50 is in the interval",
+        "Reject H₀ - the interval is too wide",
+        "Cannot determine from the confidence interval"
+      ],
+      correct: 1,
+      explanation: "Since 0.50 is within the 90% confidence interval (0.42, 0.58), we fail to reject H₀ at α = 0.10. The confidence interval and hypothesis test are equivalent when the confidence level equals 1 - α."
+    },
+    {
+      id: 6,
+      question: "What happens to the width of a confidence interval when the sample size increases?",
+      options: [
+        "It increases",
+        "It decreases",
+        "It stays the same",
+        "It depends on the confidence level"
+      ],
+      correct: 1,
+      explanation: "As sample size increases, the standard error decreases (SE = √(p(1-p)/n)), which makes the margin of error smaller and the confidence interval narrower."
+    },
+    {
+      id: 7,
+      question: "Which of the following would result in a wider confidence interval?",
+      options: [
+        "Increasing the sample size",
+        "Decreasing the confidence level",
+        "Increasing the confidence level",
+        "Using a point estimate closer to 0.5"
+      ],
+      correct: 2,
+      explanation: "Increasing the confidence level increases the critical value (z*), which increases the margin of error and makes the interval wider."
+    },
+    {
+      id: 8,
+      question: "A Type I error occurs when:",
+      options: [
+        "We reject H₀ when H₀ is true",
+        "We fail to reject H₀ when H₀ is false",
+        "We reject Hₐ when Hₐ is true",
+        "We fail to reject Hₐ when Hₐ is false"
+      ],
+      correct: 0,
+      explanation: "A Type I error is rejecting the null hypothesis when it is actually true. The probability of a Type I error is α, the significance level."
+    },
+    {
+      id: 9,
+      question: "A Type II error occurs when:",
+      options: [
+        "We reject H₀ when H₀ is true",
+        "We fail to reject H₀ when H₀ is false",
+        "We reject Hₐ when Hₐ is true",
+        "We fail to reject Hₐ when Hₐ is false"
+      ],
+      correct: 1,
+      explanation: "A Type II error is failing to reject the null hypothesis when it is actually false. The probability of a Type II error is β."
+    },
+    {
+      id: 10,
+      question: "The power of a test is:",
+      options: [
+        "The probability of making a Type I error",
+        "The probability of making a Type II error",
+        "The probability of correctly rejecting H₀ when H₀ is false",
+        "The probability of correctly failing to reject H₀ when H₀ is true"
+      ],
+      correct: 2,
+      explanation: "Power = 1 - β = the probability of correctly rejecting the null hypothesis when the alternative hypothesis is true."
+    }
   ]
 };
