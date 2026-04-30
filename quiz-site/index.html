@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiz Game - Select a Set</title>
+  <style>
+    :root{--bg:#0b1020;--panel:#121a31;--panel-2:#182344;--text:#eef2ff;--muted:#b6c2e3;--accent:#7aa2ff;--good:#2ecc71;--bad:#ff6b6b;--border:#2c3963;--warn:#f0a500;--purple:#a78bfa;}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,sans-serif;background:linear-gradient(180deg,#08101e 0%,#0b1020 100%);color:var(--text);min-height:100vh;}
+    .wrap{max-width:980px;margin:0 auto;padding:28px 18px 40px;}
+    h1{margin-top:0;margin-bottom:20px;text-align:center;color:var(--accent);}
+    .set-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
+    .set-card{background:rgba(18,26,49,.95);border:1px solid var(--border);border-radius:18px;padding:20px;cursor:pointer;transition:transform 0.2s ease, box-shadow 0.2s ease;}
+    .set-card:hover{transform:translateY(-5px);box-shadow:0 12px 25px rgba(0,0,0,.3);}
+    .set-card h2{margin-top:0;margin-bottom:10px;color:var(--text);font-size:1.4rem;}
+    .set-card p{color:var(--muted);font-size:0.95rem;margin-bottom:10px;}
+    .set-card .details{display:flex;justify-content:space-between;align-items:center;font-size:0.85rem;color:var(--accent);}
+    .set-card .count{font-weight:bold;}
+    .set-card .tag{background:var(--panel-2);padding:5px 10px;border-radius:12px;}
+    a{text-decoration: none; color: inherit;}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Select a Quiz Set</h1>
+  <div class="set-list" id="quizSetList">
+    <!-- Quiz sets will be dynamically loaded here -->
+  </div>
+</div>
+
+<script>
+const SETS = [
+  { id: "ap-stats-u6", title: "AP Stats — Unit 6", description: "38 questions on inference, CIs, and sampling", count: 38, tag: "Stats" },
+  { id: "ap-stats-u7", title: "AP Stats — Unit 7", description: "10 questions on inference for quantitative data: means", count: 10, tag: "Stats" },
+  // Add more sets here as needed
+];
+
+document.addEventListener('DOMContentLoaded', () => {
+  const quizSetList = document.getElementById('quizSetList');
+
+  SETS.forEach(set => {
+    const card = document.createElement('div');
+    card.className = 'set-card';
+    card.innerHTML = `
+      <h2>${set.title}</h2>
+      <p>${set.description}</p>
+      <div class="details">
+        <span class="count">${set.count} Questions</span>
+        <span class="tag">${set.tag}</span>
+      </div>
+    `;
+    card.addEventListener('click', () => {
+      window.location.href = `engine.html?set=${set.id}`;
+    });
+    quizSetList.appendChild(card);
+  });
+});
+</script>
+</body>
+</html>
