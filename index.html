@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Site - Question Sets</title>
+</head>
+<body>
+    <h1>Welcome to the Quiz Site!</h1>
+    <h2>Available Question Sets:</h2>
+    <div id="quiz-sets-menu"></div>
+
+    <script>
+        const SETS = [
+            { id: "sample-quiz", title: "Sample Quiz Set", count: 3, tag: "General" },
+            // Add new quiz sets here
+        ];
+
+        const quizSetsMenu = document.getElementById("quiz-sets-menu");
+
+        SETS.forEach(set => {
+            const card = document.createElement("div");
+            card.className = "quiz-card";
+            card.innerHTML = `
+                <h3>${set.title}</h3>
+                <p>${set.count} questions</p>
+                <p>Tag: ${set.tag}</p>
+                <button onclick="window.location.href = 'engine.html?set=${set.id}'">Start Quiz</button>
+            `;
+            quizSetsMenu.appendChild(card);
+        });
+    </script>
+</body>
+</html>
